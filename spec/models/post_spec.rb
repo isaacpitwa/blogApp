@@ -41,7 +41,7 @@ RSpec.describe Post, type: :model do
 
   describe '#update_post_counter' do
     it 'should increment the posts_counter of the user' do
-      subject.user = User.new(name:'Demo User',posts_counter:0)
+      subject.user = User.new(name: 'Demo User', posts_counter: 0)
       posts_counter = subject.user.posts_counter
       subject.update_post_counter
       expect(subject.user.posts_counter).to eq(posts_counter + 1)

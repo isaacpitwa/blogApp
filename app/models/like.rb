@@ -6,5 +6,4 @@ class Like < ActiveRecord::Base
     post.likes_counter = 0 if post.likes_counter.nil?
     post.increment!(:likes_counter)
   end
-  
 end
