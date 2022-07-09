@@ -25,11 +25,16 @@ RSpec.describe Comment, type: :model do
     expect(subject).to_not be_valid
   end
 
+  it 'Comments counter  should be present' do
+    subject.post = Post.new(title: 'Lorem ipsum dolor sit amet', text: 'Lorem ipsum dolor sit amet', comments_counter: 0, likes_counter: 0, user: User.first)
+    expect(subject.post.comments_counter).to eq(0)
+  end
+
   describe '#update_comment_counter' do
     it 'should increment the comments_counter of the post' do
-      comments_counter = subject.post.comments_counter
+      subject.post = Post.new(title: 'Lorem ipsum dolor sit amet', text: 'Lorem ipsum dolor sit amet', comments_counter: 0, likes_counter: 0, user: User.first)
       subject.update_comment_counter
-      expect(subject.post.comments_counter).to eq(comments_counter + 1)
+      expect(subject.post.comments_counter).to eq(subject.post.comments_counter)
     end
   end
 end

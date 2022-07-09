@@ -6,5 +6,4 @@ class Comment < ActiveRecord::Base
     post.comments_counter = 0 if post.comments_counter.nil?
     post.increment!(:comments_counter)
   end
-
 end
