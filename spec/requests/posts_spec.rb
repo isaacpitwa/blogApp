@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  
   describe 'GET /users/:id/posts' do
     it 'response for index action status is correct' do
       get user_posts_path(1)
