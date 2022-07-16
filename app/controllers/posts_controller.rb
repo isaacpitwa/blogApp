@@ -18,5 +18,27 @@ class PostsController < ApplicationController
     @comment.save
     redirect_to user_posts_path(current_user)
   end
+
+  def new
+    @post = Post.new
+    @user = current_user
+  end
+
+  def create
+    @post = Post.new(post_params)
+    @post.user = current_user
+    if @post.save
+      puts @post
+      redirect_to user_posts_path(current_user)
+    else
+      render :new
+    end
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    Like.new(user: current_user, post: @post).save
+    redirect_to user_posts_path(current_user)
+  end
   
 end
