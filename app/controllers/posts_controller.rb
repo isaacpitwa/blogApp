@@ -10,4 +10,13 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
   end
+
+  def comment
+    @post = Post.find(params[:id])
+    p params
+    @comment = Comment.new(user: current_user, post: @post, text: params[:text])
+    @comment.save
+    redirect_to user_posts_path(current_user)
+  end
+  
 end
