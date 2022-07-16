@@ -40,5 +40,8 @@ class PostsController < ApplicationController
     Like.new(user: current_user, post: @post).save
     redirect_to user_posts_path(current_user)
   end
-  
+
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
 end
