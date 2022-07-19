@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
+  user = User.create(name:'Demo User', photo: '', bio: 'Lorem Ipsum Dolor Sit Amet  Consectetur Adipiscing Elit')
   describe 'GET /users' do
     it 'response for index action status is correct' do
       get users_path
@@ -20,15 +21,15 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /users/:id' do
     it 'response for show action status is correct' do
-      get user_path(1)
+      get user_path(User.last)
       expect(response).to have_http_status(200)
     end
     it 'renders the show template' do
-      get user_path(1)
+      get user_path(User.last)
       expect(response).to render_template('show')
     end
     it 'the response body of show includes correct placeholder text' do
-      get user_path(1)
+      get user_path(User.last)
       expect(response.body).to include('XXXX')
     end
   end
