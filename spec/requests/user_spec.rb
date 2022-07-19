@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  user = User.create(name:'Demo User', photo: '', bio: 'Lorem Ipsum Dolor Sit Amet  Consectetur Adipiscing Elit')
   describe 'GET /users' do
     it 'response for index action status is correct' do
       get users_path
@@ -12,7 +11,6 @@ RSpec.describe 'Users', type: :request do
       get users_path
       expect(response).to render_template('index')
     end
-
   end
 
   describe 'GET /users/:id' do
