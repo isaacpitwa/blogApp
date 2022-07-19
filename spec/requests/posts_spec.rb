@@ -14,10 +14,6 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template('index')
     end
 
-    it 'the response body of index includes correct placeholder text' do
-      get user_posts_path(User.last)
-      expect(response.body).to include('Post List')
-    end
   end
 
   describe 'GET /users/:user_id/posts/:id' do
@@ -29,9 +25,6 @@ RSpec.describe 'Posts', type: :request do
       get user_post_path(User.last, Post.last)
       expect(response).to render_template('show')
     end
-    it 'the response body of show includes correct placeholder text' do
-      get user_post_path(User.last, Post.last)
-      expect(response.body).to include('Post')
-    end
+
   end
 end
