@@ -16,10 +16,11 @@ RSpec.describe 'Post index', type: :system do
 
   it 'can see the number of posts' do
     User.create(name:'Demo User', photo: '', bio: 'Lorem Ipsum Dolor Sit Amet  Consectetur Adipiscing Elit')
-    Post.create(title: 'post1', text: 'text1', user:user)
-    Post.create(title: 'post2', text: 'text2', user:user)
+    post1 = Post.create(title: 'post1', text: 'text1', user:user)
+    post2 = Post.create(title: 'post2', text: 'text2', user:user)
+    post1.update_post_counter
+    post2.update_post_counter
     visit '/users'
-    expect(page).to have_content('1')
     expect(page).to have_content('2')
   end
 
