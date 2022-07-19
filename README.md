@@ -22,6 +22,12 @@
 - Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/isaac-pitwa)
 
+👤 **Ivan Gaona**
+
+- GitHub: [@ivaan1992](https://github.com/ivaan1992)
+- Twitter: [@ivangaona92](https://twitter.com/ivangaona92)
+- LinkedIn: [Ivan92](https://www.linkedin.com/in/ivan-linares-gaona/)
+
 
 ## 🤝 Contributing
 
