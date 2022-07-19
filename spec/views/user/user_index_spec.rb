@@ -19,9 +19,9 @@ RSpec.describe 'User index', type: :system do
   it 'displays the number of posts of the users' do
     user1 = User.create(name: 'Demo User1', photo: '', bio: 'Lorem Ipsum Dolor Sit Amet  Consectetur Adipiscing Elit')
     user2 = User.create(name: 'Demo User2', photo: '', bio: 'Lorem Ipsum Dolor Sit Amet  Consectetur Adipiscing Elit')
-    post1 = Post.create(title: 'post1', text: 'text1', user: user1)
-    post2 = Post.create(title: 'post2', text: 'text2', user: user2)
-    post3 = Post.create(title: 'post3', text: 'text3', user: user2)
+    Post.create(title: 'post1', text: 'text1', user: user1)
+    Post.create(title: 'post2', text: 'text2', user: user2)
+    Post.create(title: 'post3', text: 'text3', user: user2)
     visit '/users'
     expect(page).to have_content('1')
     expect(page).to have_content('2')

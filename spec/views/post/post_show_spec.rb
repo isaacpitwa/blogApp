@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Post show', type: :system do
-
   it 'can see the post\'s title.' do
     user = User.create(name: 'Demo User', photo: '', bio: 'Lorem Ipsum Dolor Sit Amet  Consectetur Adipiscing Elit')
     post = Post.create(title: 'post1', text: 'text1', user: user)
