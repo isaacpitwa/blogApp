@@ -25,15 +25,17 @@ input {
   margin-bottom: 1rem;
 }
 
-.field input, .actions input[type="submit"] {
+.field input,
+.actions input[type="submit"] {
   width: 100%;
- width: 100%;
 }
-.field input[type="checkbox"] {
+
+.field input [type="checkbox"] {
   width: auto;
 }
-.remember{
+
+.remember {
   display: flex;
   align-items: baseline;
-  gap:8px;
+  gap: 8px;
 }
