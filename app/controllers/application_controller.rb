@@ -31,7 +31,6 @@ class ApplicationController < ActionController::Base
     render json: { error: 'Unauthorized' }, status: :unauthorized unless client_has_valid_token?
   end
 
-
   protected
 
   def update_allowed_parameters
