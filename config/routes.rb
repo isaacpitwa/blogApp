@@ -12,12 +12,12 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
     end
     post "/posts/:id/like" => "posts#like", as: :like
-end
-scope 'api' do
-  get '/posts/:id/comments' => 'api/comments#index', as: :api_post_comments
-  post '/posts/:id/comments' => 'api/comments#create', as: :api_post_comments_create
-  resources :users, only: [] do
-    get '/posts' => 'api/posts#index', as: :api_user_posts
   end
-end
+    scope 'api' do
+      get '/posts/:id/comments' => 'api/comments#index', as: :api_post_comments
+      post '/posts/:id/comments' => 'api/comments#create', as: :api_post_comments_create
+      resources :users, only: [] do
+        get '/posts' => 'api/posts#index', as: :api_user_posts
+      end
+    end
 end
