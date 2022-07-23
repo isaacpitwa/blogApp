@@ -46,3 +46,13 @@ input {
   flex-direction: column;
   justify-self: center;
 }
+
+.session-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.session-actions button {
+  padding: 1rem;
+}
