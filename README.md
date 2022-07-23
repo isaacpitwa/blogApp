@@ -33,7 +33,7 @@ and run these commands:
 
 ## Authors
 
-👤 **Author1**
+👤 **Isaac Pitwa**
 
 - GitHub: [@isaacpitwa](https://github.com/isaacpitwa)
 - Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
