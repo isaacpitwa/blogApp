@@ -3,7 +3,6 @@ class Api::PostsController < ApplicationController
   
     def index
       posts = Post.where(user_id: params[:user_id]).order(created_at: :desc)
-      render json: { posts: }, status: :ok
+      render json: { posts: posts}, status: :ok
     end
   end
-  

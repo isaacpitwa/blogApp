@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :update_allowed_parameters, if: :devise_controller?
 
   def token(user_id)
-    payload = { user_id: }
+    payload = { user_id: user_id }
     JWT.encode(payload, hmac_secret, 'HS256')
   end
-  
+
   def hmac_secret
     ENV.fetch('API_SECRET_KEY', nil)
   end
