@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  default_url_options :host => "127.0.0.1:3000"
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   post '/login', to: 'auth#login', default: {:format => :json}
